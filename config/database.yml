@@ -14,7 +14,7 @@ development:
 
 test:
   <<: *default
-  database:   database: "fashion_shop_test"
+  database: "fashion_shop_test"
 
 production:
   <<: *default
