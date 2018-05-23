@@ -1,0 +1,21 @@
+class CreateProducts < ActiveRecord::Migration[5.2]
+  def change
+    create_table :products do |t|
+      t.string :name
+      t.float :price
+      t.float :promotion_price
+      t.integer :quantity
+      t.text :short_description
+      t.text :long_description
+      t.string :tag
+      t.string :ref
+      t.integer :branh_id
+      t.integer :category_id
+      t.boolean :active, default: false
+      t.boolean :deleted
+      t.datetime :deleted_at
+
+      t.timestamps
+    end
+  end
+end
