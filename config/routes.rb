@@ -6,5 +6,6 @@ Rails.application.routes.draw do
     get "/", to: "base#index"
     resources :users
     resources :addresses
+    resources :shippings
   end
 end

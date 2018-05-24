@@ -1,4 +1,5 @@
 en:
+  currency: "$"
   base_title: "Base title"
   sessions:
     new:
@@ -50,11 +51,48 @@ en:
         save_success: "Save Success"
       update:
         save_success: "Save Success"
+    shippings:
+      index:
+        title: "Shippings"
+        list: "List"
+        add_new: "Add new"
+        shipping_empty: "Shipping empty"
+        id: "ID"
+        name: "Name"
+        description: "Description"
+        price: "Price"
+        edit: "Edit"
+        delete: "Delete"
+        you_sure: "You sure?"
+      destroy:
+        delete_success: "Deleted success"
+        delete_error: "Deleted error"
+      new:
+        title: "Shippings"
+        add: "Add"
+      edit:
+        title: "Shippings"
+        edit: "Edit"
+      create:
+        save_success: "Save success"
+      update:
+        save_success: "Save success"
+      form:
+        name: "Name"
+        description: "Description"
+        price: "Price"
+        btn_save: "Save"
+        btn_reset: "Reset"
+      list:
+        edit: "Edit"
+        delete: "Delete"
+        you_sure: "You sure?"
   layouts:
     admin:
       sidebar:
         user: "User"
         address: "Address"
+        shipping: "Shipping"
   views:
     pagination:
       first: "«"
