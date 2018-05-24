@@ -1,4 +1,3 @@
-
 en:
   base_title: "Base title"
   sessions:
@@ -12,5 +11,54 @@ en:
       error_login: "Email or password is not correct"
     destroy:
       logout: "Logout success"
-
-
+  admin:
+    users:
+      index:
+        title: "List user"
+    addresses:
+      index:
+        title: "Addresses"
+        list: "List"
+        id: "ID"
+        alias: "Alias"
+        full_name: "Full name"
+        delete: "Delete"
+        edit: "Edit"
+        you_sure: "You Sure?"
+        add_new: "Add new"
+      destroy:
+        delete_success: "Delete success"
+        delete_error: "Delete error"
+      edit:
+        title: "Address"
+        edit: "Edit"
+      new:
+        title: "Address"
+        add: "Add"
+      address_not_found: "Address not found"
+      form:
+        alias: "Alias"
+        full_name: "Full name"
+        post_code: "Post code"
+        city: "City"
+        country: "Country"
+        phone: "Phone"
+        choose_user: "Choose user"
+        btn_save: "Save"
+        btn_reset: "Reset"
+      create:
+        save_success: "Save Success"
+      update:
+        save_success: "Save Success"
+  layouts:
+    admin:
+      sidebar:
+        user: "User"
+        address: "Address"
+  views:
+    pagination:
+      first: "«"
+      last: "»"
+      previous: "‹"
+      next: "›"
+      truncate: "…"

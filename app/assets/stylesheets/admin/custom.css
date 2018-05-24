@@ -1,2 +1,14 @@
-.remember_me{margin-left: 0 !important;}
-.txt_rememeber_login{display: block; margin-left: 20px;}
+.remember_me{
+  margin-left: 0 !important;
+}
+
+.txt_rememeber_login{
+  display: block; margin-left: 20px;
+}
+
+.note_message{
+  margin-left: 250px;
+}
+
+.action_btn{margin-bottom: 15px;
+}

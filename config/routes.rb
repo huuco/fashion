@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   namespace :admin do
     get "/", to: "base#index"
     resources :users
-    get "/category", to: "categories#list"
+    resources :addresses
   end
 end
