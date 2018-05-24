@@ -3,10 +3,13 @@ git_source(:github){|repo| "https://github.com/#{repo}.git"}
 
 ruby "2.5.1"
 
+gem "bcrypt", "3.1.11"
 gem "bootsnap", ">= 1.1.0", require: false
 gem "bootstrap-sass", "~> 3.3", ">= 3.3.7"
+gem "carrierwave", "1.2.2"
 gem "coffee-rails", "~> 4.2"
 gem "figaro"
+gem "i18n"
 gem "jbuilder", "~> 2.5"
 gem "jquery-rails", "~> 4.3", ">= 4.3.1"
 gem "mysql2"
@@ -34,5 +37,5 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "font-awesome-rails", "~> 4.7", ">= 4.7.0.4"
+gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]

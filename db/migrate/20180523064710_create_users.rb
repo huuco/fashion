@@ -4,7 +4,8 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :full_name
       t.string :username
       t.string :email
-      t.string :password
+      t.string :password_digest
+      t.string :remember_digest
       t.integer :role, default: 1
       t.boolean :active, default: false
 
