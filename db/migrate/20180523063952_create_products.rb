@@ -9,10 +9,10 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.text :long_description
       t.string :tag
       t.string :ref
-      t.integer :branh_id
+      t.integer :brand_id
       t.integer :category_id
       t.boolean :active, default: false
-      t.boolean :deleted
+      t.boolean :deleted, default: 0
       t.datetime :deleted_at
 
       t.timestamps
