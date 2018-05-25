@@ -10,3 +10,6 @@ shipping:
     maximum: 255
   price:
     numericality: 0
+products:
+  record_per_page: 8
+URL_IMAGE: "/upload/"

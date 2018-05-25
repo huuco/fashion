@@ -1,0 +1,5 @@
+<% if @products.present? %>
+  <%= render "find_product" %>
+<% else %>
+  <p class="product_not_found"><%= t "search.product_not_found" %></p>
+<% end %>
