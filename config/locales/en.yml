@@ -1,2 +1,16 @@
+
 en:
-  base_title: "FashionShop"
+  base_title: "Base title"
+  sessions:
+    new:
+      title_form: "Login"
+      btn_login: "Login"
+      remember_login: "Remember login"
+      email: "Email"
+      password: "Password"
+    create:
+      error_login: "Email or password is not correct"
+    destroy:
+      logout: "Logout success"
+
+

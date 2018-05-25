@@ -93,10 +93,10 @@ ActiveRecord::Schema.define(version: 2018_05_23_065010) do
     t.text "long_description"
     t.string "tag"
     t.string "ref"
-    t.integer "branh_id"
+    t.integer "brand_id"
     t.integer "category_id"
     t.boolean "active", default: false
-    t.boolean "deleted"
+    t.boolean "deleted", default: false
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -132,7 +132,8 @@ ActiveRecord::Schema.define(version: 2018_05_23_065010) do
     t.string "full_name"
     t.string "username"
     t.string "email"
-    t.string "password"
+    t.string "password_digest"
+    t.string "remember_digest"
     t.integer "role", default: 1
     t.boolean "active", default: false
     t.datetime "created_at", null: false
