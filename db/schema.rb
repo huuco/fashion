@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2018_05_23_065010) do
     t.string "full_name"
     t.string "post_code"
     t.string "city"
-    t.string "coutry"
+    t.string "country"
     t.string "phone"
     t.integer "user_id"
     t.datetime "created_at", null: false
