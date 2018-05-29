@@ -11,7 +11,6 @@
     role: 0,
     active: Time.zone.now
 end
-
 20.times do |n|
   Address.create! alias: "my address"+n.to_s,
     full_name: Faker::Name.name,
@@ -35,22 +34,6 @@ end
 30.times do |n|
   Category.create name: Faker::Space.moon
 end
-
-30.times do |n|
-  Product.create name: Faker::LeagueOfLegends.champion,
-    price: Faker::Number.decimal(3),
-    promotion_price: Faker::Number.decimal(2, 2),
-    quantity: Faker::Number.number(2),
-    short_description: Faker::Lorem.sentence,
-    long_description: Faker::Lorem.paragraph,
-    brand_id: rand(0..30),
-    category_id: rand(31)
-end
-
-30.times do |n|
-  Image.create product_id: Faker::Number.number(2)
-end
-
 1.times do |n|
   Payment.create! name: "COD",
    description: ""
@@ -76,4 +59,28 @@ end
     order_id: rand(1..10),
     quantity: rand(1..5),
     total_price: 1500
+end
+30.times do |n|
+  Brand.create name: Faker::Space.planet
+end
+
+30.times do |n|
+  Category.create name: Faker::Space.moon
+end
+
+30.times do |n|
+  Product.create name: Faker::LeagueOfLegends.champion,
+    price: Faker::Number.decimal(3),
+    promotion_price: Faker::Number.decimal(2, 2),
+    quantity: Faker::Number.number(2),
+    short_description: Faker::Lorem.sentence,
+    long_description: Faker::Lorem.paragraph,
+    brand_id: rand(0..30),
+    category_id: rand(31)
+end
+30.times do |n|
+  image = "sp"+n.to_s+".jpg"
+  product_id = n.to_s
+  Image.create! image: image,
+    product_id: product_id
 end

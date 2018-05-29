@@ -1,0 +1,52 @@
+<div id="header">
+  <div class="header-top">
+    <div class="container">
+      <div class="pull-left auto-width-left">
+        <ul class="top-menu menu-beta l-inline">
+          <li><a href=""><i class="fa fa-home"></i>
+            <%= t "header.address_store" %></a></li>
+          <li><a href=""><i class="fa fa-phone"></i>
+            <%= t "header.hot_line" %></a></li>
+        </ul>
+      </div>
+      <div class="pull-right auto-width-right">
+        <ul class="top-details menu-beta l-inline">
+          <li><a href="#"><i class="fa fa-user"></i>
+            <%= t "header.account" %></a>
+          </li>
+          <li><%= link_to t("header.log_in"), login_path %></li>
+          <li><%= link_to t("header.sign_up"), signup_path %></li>
+        </ul>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  <div class="header-body">
+    <div class="container beta-relative">
+      <div class="pull-left">
+        <%= link_to image_tag(Settings.URL_IMAGE+"logo.png",alt: "logo",class: "logo"), root_path %>
+      </div>
+      <div class="pull-right beta-components space-left ov">
+        <div class="space10">&nbsp;</div>
+        <div class="beta-comp">
+          <%= form_tag search_path, method: :get, id: "searchform" do %>
+            <%= text_field_tag :search, params[:search], id: "s",
+              placeholder: "Search an items", require: true %>
+            <%= button_tag type: :submit,id: "searchsubmit" do %>
+            <i class ="fa fa-search"></i>
+              <% end %>
+            <% end %>
+        </div>
+        <div class="beta-comp">
+          <div class="cart">
+            <div class="beta-select"><i class="fa fa-shopping-cart">
+              </i><%= link_to t("header.cart"), shopping_cart_path %>
+                <i class="fa fa-chevron-down"></i>
+              <div class="beta-dropdown cart-body">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
