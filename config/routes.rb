@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     resources :addresses
     resources :shippings
     resources :orders
+    resources :brands, except: :show
+
   end
   get "/about", to: "static_pages#about"
   get "/contact", to: "static_pages#contact"
@@ -16,6 +18,7 @@ Rails.application.routes.draw do
   post "/signup", to:"users#create"
   get "/shopping_cart", to: "cart#shopping_cart"
   get "search(/:search)", to: "search#index" , as: :search
+  get "search_brand(/:search)", to: "search1#index" , as: :search_brand
   root "products#index"
   resources :products
   resources :users, only: %i(new create)
