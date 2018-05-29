@@ -12,3 +12,11 @@
 
 .action_btn{margin-bottom: 15px;
 }
+
+#page-wrapper .page-content{
+  padding-bottom:120px
+}
+
+.center{
+  text-align: center
+}

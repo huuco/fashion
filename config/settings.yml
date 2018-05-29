@@ -2,3 +2,11 @@ address:
   limit_page: 10
 user:
   limit_page: 5
+address:
+  limit_page: 10
+shipping:
+  limit_page: 5
+  title:
+    maximum: 255
+  price:
+    numericality: 0

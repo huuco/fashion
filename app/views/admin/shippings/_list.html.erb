@@ -1,0 +1,16 @@
+<tr class="odd gradeX center">
+  <td><%= shipping.id %></td>
+  <td><%= shipping.title %></td>
+  <td><%= shipping.description %></td>
+  <td><%= number_to_currency(shipping.price, unit: t("currency"),
+    separator: ",") %></td>
+  <td class="center">
+    <i class="fa fa-pencil fa-fw"></i>
+    <%= link_to t(".edit"), edit_admin_shipping_path(shipping) %>
+  </td>
+  <td class="center">
+    <i class="fa fa-trash-o  fa-fw"></i>
+    <%= link_to t(".delete"), admin_shipping_path(shipping),
+      method: :delete, data: {confirm: t(".you_sure")} %>
+  </td>
+</tr>
