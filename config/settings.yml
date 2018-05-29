@@ -1,5 +1,7 @@
 address:
   limit_page: 10
+order:
+  limit_page: 10
 user:
   limit_page: 5
 address:
