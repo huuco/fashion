@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :shippings
     resources :orders
     resources :brands, except: :show
-
+    resources :products, except: :show
   end
   get "/about", to: "static_pages#about"
   get "/contact", to: "static_pages#contact"

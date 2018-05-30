@@ -12,6 +12,7 @@ gem "coffee-rails", "~> 4.2"
 gem "config"
 gem "faker"
 gem "figaro"
+gem "font-awesome-rails", "~> 4.7", ">= 4.7.0.4"
 gem "i18n"
 gem "jbuilder", "~> 2.5"
 gem "jquery-rails", "~> 4.3", ">= 4.3.1"
@@ -41,5 +42,4 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "font-awesome-rails", "~> 4.7", ">= 4.7.0.4"
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
