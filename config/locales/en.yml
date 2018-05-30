@@ -8,6 +8,7 @@ en:
       remember_login: "Remember login"
       email: "Email"
       password: "Password"
+      logined: "You have logined before. Now, no need login"
     create:
       error_login: "Email or password is not correct"
     destroy:
@@ -57,7 +58,7 @@ en:
         list: "List"
         add_new: "Add new"
         shipping_empty: "Shipping empty"
-        id: "ID"
+        stt: "STT"
         name: "Name"
         description: "Description"
         price: "Price"
@@ -188,7 +189,9 @@ en:
     log_in: "Log in"
     sign_up: "Sign up"
     account: "Account"
+    hello: "Hello: %{full_name}"
     cart: "Cart"
+    cart: "Logout"
   nav:
     menu: "Menu"
     home: "Home"
