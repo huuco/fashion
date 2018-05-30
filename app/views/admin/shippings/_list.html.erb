@@ -1,7 +1,6 @@
 <tr class="odd gradeX center">
-  <td><%= shipping.id %></td>
+  <td><%= index_for_list @shippings, shipping_counter %></td>
   <td><%= shipping.title %></td>
-  <td><%= shipping.description %></td>
   <td><%= number_to_currency(shipping.price, unit: t("currency"),
     separator: ",") %></td>
   <td class="center">

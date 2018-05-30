@@ -4,30 +4,50 @@
 .logo {
   width: 100px;
 }
+
 .product_not_found {
   font-size: 20px;
   margin-left: 80px;
   margin-top: 20px;
 }
+
 .beta-products-list .col-sm-3 {
   margin-bottom: 20px;
 }
+
 .beta-btn .process-button {
   float: right;
   margin-top: 20px;
 }
+
 .media .media-body {
   float: left;
   width: 200px;
 }
- .media .img_product {
+
+.media .img_product {
   float: right;
   margin-right: 20px;
   width: 100px;
 }
+
 .col-sm-8 .custom-name-product {
   font-size: 25px;
 }
+
 .form-block #gender {
   width: 10%;
+}
+
+.session_password {
+  border: 1px solid #e1e1e1;
+  height: 37px;
+  padding: 0 12px 0;
+}
+
+#session_remember_me.remember_me {
+  display: inline-block;
+  margin: 0;
+  position: static;
+  width: auto;
 }
