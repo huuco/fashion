@@ -13,15 +13,15 @@
         <ul class="top-details menu-beta l-inline">
           <% if logged_in? %>
             <li>
-              <a href="javascript:void(0)">
+              <span>
                 <%= t "header.hello", full_name: current_user.full_name %>
-              </a>
+              </span>
             </li>
             <li>
-              <a href="">
+              <%= link_to my_account_path do %>
                 <i class="fa fa-user"></i>
                 <%= t "header.account" %>
-              </a>
+              <% end %>
             </li>
             <li><%= link_to t("header.logout"), logout_path %></li>
           <% else %>

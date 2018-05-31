@@ -16,6 +16,10 @@ Rails.application.routes.draw do
   get "/checkout", to: "checkout#index"
   get "/signup", to:"users#new"
   post "/signup", to:"users#create"
+  get "/my-account", to: "users#show"
+  get "/update-account/:id", to: "users#edit", as: :update_account
+  put "/update-account/:id", to: "users#update"
+  patch "/update-account/:id", to: "users#update"
   get "/shopping_cart", to: "cart#shopping_cart"
   get "search(/:search)", to: "search#index" , as: :search
   get "search_brand(/:search)", to: "search1#index" , as: :search_brand
