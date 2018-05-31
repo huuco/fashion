@@ -57,3 +57,12 @@
     width:100%;
   }
 }
+
+.menu-beta li {
+  >span {
+    padding: 0 20px;
+    line-height: 47px;
+    height: 47px;
+    display: block;
+  }
+}
