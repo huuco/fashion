@@ -14,7 +14,7 @@
       </li>
       <li>
         <%= link_to "/admin" do %>
-          <i class="fa fa-dashboard fa-fw"></i> Dashboard
+          <i class="fa fa-dashboard fa-fw"></i> <%= t".dashboard" %>
         <% end %>
       </li>
       <li>
@@ -43,13 +43,19 @@
       </li>
       <li>
         <%= link_to admin_brands_path do %>
-          <i class="fa fa-bar-chart-o fa-fw"></i> <%= t ".brnad" %>
+          <i class="fa fa-bar-chart-o fa-fw"></i> <%= t ".brand" %>
           <span class="fa arrow"></span>
         <% end %>
       </li>
       <li>
         <%= link_to admin_products_path do %>
           <i class="fa fa-bar-chart-o fa-fw"></i> <%= t ".product" %>
+          <span class="fa arrow"></span>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to admin_slides_path do %>
+          <i class="fa fa-bar-chart-o fa-fw"></i> <%= t ".slide" %>
           <span class="fa arrow"></span>
         <% end %>
       </li>
