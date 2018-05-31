@@ -14,6 +14,28 @@ en:
     destroy:
       logout: "Logout success"
   admin:
+    brands:
+      destroy:
+        delete_success: "Delete success"
+        can't_not: "Can't not brand"
+        update:
+          update_success: "Update success"
+        create:
+          create_success: "Create success"
+        find_brand:
+          not_found_brand: "Not found brand"
+      edit:
+        title: "Edit"
+      new:
+        add: "Add"
+      index:
+        brand: "Brands"
+        search_an_brand: "Search an brand"
+      form:
+        you_sure: "You Sure?"
+        title: "Brand"
+        name: "Name"
+        description: "Description"
     users:
       index:
         title: "List user"
@@ -132,6 +154,7 @@ en:
         address: "Address"
         shipping: "Shipping"
         order: "Order"
+        brand: "Brand"
   views:
     pagination:
       first: "«"
