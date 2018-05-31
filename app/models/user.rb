@@ -24,10 +24,21 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :rates, dependent: :destroy
 
+  scope :search, (lambda do |search|
+  select(:id, :full_name, :username, :email, :activated, :role).
+    where "full_name LIKE :q OR username LIKE :q OR email LIKE :q",
+      q: "%#{search}%"
+  end
+  )
+
   has_secure_password
+  ADMIN_PARAMS = %i(full_name username email
+    password password_confirmation role activated).freeze
 
   USER_PARAMS = %i(full_name username email
     password password_confirmation).freeze
+  validates :password, length: {minimum: Settings.user.password.min_length},
+   allow_nil: true
 
   scope :list_user, ->(current_user_id){where "id != ?", current_user_id}
 

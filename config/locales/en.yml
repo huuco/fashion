@@ -39,6 +39,16 @@ en:
     users:
       index:
         title: "List user"
+        search_an_user: "search an fullname, username, email"
+      update:
+        update_succeed: "update succeed"
+        update_failed: "update failed"
+      destroy:
+        delete_succeed: "delete succeed"
+        delete_failed: "delete failed"
+      create:
+        create_succeed:  "create succeed"
+        create_failed: "create failed"
     products:
       form:
         name: "Name"
@@ -60,6 +70,27 @@ en:
       update:
         update_success: "update success"
         update_failed: "update failed"
+        user: "User"
+        add_new: "Add new"
+        name: "Name"
+        full_name: "Full name"
+        role: "Role"
+        active: "Active"
+        search_an_user: "Search an user"
+      edit:
+        eidt: "Edit"
+        you_sure: "you sure"
+      update:
+        update_succeed: "update succeed"
+        update_failed: "update failed"
+      destroy:
+        delete_succeed: "delete succeed"
+        delete_failed: "delete failed"
+      find_user:
+        not_found_user: "Not found user"
+      create:
+        create_succeed: "create succeed"
+        create_failed: "create failed"
     addresses:
       index:
         title: "Addresses"
