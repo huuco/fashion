@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :brands, except: :show
     resources :products, except: :show
   end
+
   get "/about", to: "static_pages#about"
   get "/contact", to: "static_pages#contact"
   get "/checkout", to: "checkout#index"
@@ -21,10 +22,15 @@ Rails.application.routes.draw do
   put "/update-account/:id", to: "users#update"
   patch "/update-account/:id", to: "users#update"
   get "/shopping_cart", to: "cart#shopping_cart"
-  get "search(/:search)", to: "search#index" , as: :search
-  get "search_brand(/:search)", to: "search1#index" , as: :search_brand
+  get "search(/:search)", to: "search#index", as: :search
+  get "search_brand(/:search)", to: "search1#index", as: :search_brand
   root "products#index"
   resources :products
-  resources :users, only: %i(new create)
   resources :account_activations, only: :edit
+  post "/add_to_cart/:id", to: "carts#add", as: :add_to_cart
+  post "/remove_product_from_cart/:id", to: "carts#destroy",
+    as: :remove_product_from_cart
+  post "/update_cart/:id", to: "carts#update", as: :update_cart
+  post "/remove_cart/:id", to: "carts#destroy", as: :remove_cart
+  resources :carts, only: :index
 end

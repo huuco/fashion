@@ -1,0 +1,86 @@
+<div class="inner-header">
+  <div class="container">
+    <div class="pull-left">
+      <h6 class="inner-title"><%= t ".title" %></h6>
+    </div>
+    <div class="pull-right">
+      <div class="beta-breadcrumb font-large">
+        <%= link_to t(".home"), root_path %> /
+        <span><%= t ".title" %></span>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</div>
+<div class="container">
+  <div id="content">
+    <div class="table-responsive">
+      <table class="shop_table beta-shopping-cart-table" cellspacing="0">
+        <thead>
+          <tr>
+            <th class="product-name"><%= t ".image" %></th>
+            <th class="product-name"><%= t ".product" %></th>
+            <th class="product-price"><%= t ".price" %></th>
+            <th class="product-quantity"><%= t ".qty" %></th>
+            <th class="product-subtotal"><%= t ".total" %></th>
+            <th class="product-remove"><%= t ".remove" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @products_cart.each do |product, qty| %>
+          <tr class="cart_item cart_item-<%= product.id %>">
+            <td class="product-image">
+                <%= link_to image_tag(Settings.URL_IMAGE+
+                  product.images.first.image), product_path(product),
+                  class: "cart-prduct-image" %>
+            </td>
+            <td class="product-name">
+                <%= product.name %>
+            </td>
+            <td class="product-price">
+              <span class="amount">
+                <%= number_to_currency(product.promotion_price,
+                  unit: t("currency"), separator: ",") %>
+              </span>
+            </td>
+            <td class="product-quantity">
+              <%= number_field_tag "", qty, min: 1, step: 1,
+                url_update: update_cart_path(product.id),
+                class: "item-quanity" %>
+            </td>
+            <td class="product-subtotal product-subtotal-<%= product.id %>">
+              <span class="amount">
+                <%= number_to_currency(product.promotion_price * qty,
+                unit: t("currency"), separator: ",") %>
+              </span>
+            </td>
+            <td class="product-remove">
+              <%= link_to remove_product_from_cart_path(product),
+                remote: true, method: :post,
+                class: "icon-remove-cart" do %>
+                <i class="fa fa-trash-o"></i>
+              <% end %>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="cart-collaterals">
+      <div class="cart-totals pull-right">
+        <div class="cart-totals-row">
+          <h5 class="cart-total-title"><%= t "cart_total" %></h5>
+        </div>
+        <div class="cart-totals-row">
+          <span><%= t "order_total" %></span>
+          <span class="order_total">
+            <%= number_to_currency(@total,
+              unit: t("currency"), separator: ",") %>
+          </span>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</div>

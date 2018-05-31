@@ -1,6 +1,6 @@
 en:
   currency: "$"
-  base_title: "Base title"
+  base_title: "FashionShop"
   sessions:
     new:
       title_form: "Login"
@@ -91,6 +91,9 @@ en:
       create:
         create_succeed: "create succeed"
         create_failed: "create failed"
+      product_right_column:
+        best_seller: "Best seller"
+        new_product: "New products"
     addresses:
       index:
         title: "Addresses"
@@ -265,8 +268,13 @@ en:
     sign_up: "Sign up"
     account: "Account"
     hello: "Hello: %{full_name}"
-    cart: "Cart"
-    cart: "Logout"
+    item: "%{item} item(s)"
+    empty: "empty"
+    total: "Total: "
+    checkout: "Checkout"
+    viewcart: "View cart"
+  item_cart:
+    x: "%{qty} x "
   nav:
     menu: "Menu"
     home: "Home"
@@ -327,3 +335,21 @@ en:
     edit:
       acount_success: "active account success"
       acount_danger: "active account error or you have actived before"
+  carts:
+    add:
+      added_cart_success: "Add to cart success"
+    destroy:
+      removed_cart_success: "remove from cart success"
+    index:
+      title: "Shopping cart"
+      home: "Home"
+      prduct: "Product"
+      price: "Price"
+      qty: "Qty"
+      total: "Total"
+      remove: "remove"
+      image: "Image"
+      cart_total: "Cart Total"
+      order_total: "Order Total"
+    update:
+      update_success: "Updated success"

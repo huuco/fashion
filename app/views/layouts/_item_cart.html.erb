@@ -1,0 +1,28 @@
+<% if @products_cart.present? %>
+  <% @products_cart.each do |product, qty| %>
+  <div class="cart-item">
+    <div class="media">
+      <%= link_to image_tag(Settings.URL_IMAGE + product.images.first.image,
+        class: "pull-left"), "#" %>
+      <div class="media-body">
+        <span class="cart-item-title"><%= product.name %></span>
+        <span class="cart-item-amount">
+          <span class="cart-item-qty-<%= product.id %>">
+            <%= t "item_cart.x", qty: qty %>
+          </span>
+          <span>
+            <%= number_to_currency(product.promotion_price,
+              unit: t("currency"), separator: ",") %>
+          </span>
+        </span>
+      </div>
+      <div class="remove-item pull-right">
+        <%= link_to remove_cart_path(product), remote: true, method: :post,
+          class: "icon-remove-cart" do %>
+          <i class="fa fa-trash-o"></i>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+<% end %>
