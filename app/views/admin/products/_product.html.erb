@@ -1,0 +1,21 @@
+<tr class="odd gradeX center">
+  <td><%= product.name %></td>
+  <td><%= product.quantity %></td>
+  <td><%= product.category_name %></td>
+  <td><%= product.brand_name%></td>
+  <td>
+  <%= form_for [:admin, product] do |f| %>
+    <%= f.check_box :active, data: {remote: true, method: :patch,
+      url: admin_product_path(product)} %>
+  <% end %>
+  </td>
+  <td class="center">
+    <i class="fa fa-pencil fa-fw"></i>
+    <%= link_to t("admin.edit"), edit_admin_product_path(product) %>
+  </td>
+    <td class="center">
+    <i class="fa fa-trash-o fa-fw"></i>
+    <%= link_to t(".delete"), admin_product_path(product),
+      method: :delete, data: {confirm: t(".you_sure")} %>
+  </td>
+</tr>

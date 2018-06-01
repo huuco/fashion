@@ -1,5 +1,5 @@
 class Admin::BrandsController < Admin::BaseController
-  before_action :find_brand, only: %i(update destroy edit)
+  before_action :find_brand, only: %i(edit update destroy)
 
   def index
     @brands = Brand.search_brand(params[:search]).page(params[:page])
@@ -17,6 +17,7 @@ class Admin::BrandsController < Admin::BaseController
       flash[:success] = t ".create_succeed"
       redirect_to admin_brands_path
     else
+      flash[:danger] = t ".create_failed"
       render :new
     end
   end
@@ -28,6 +29,7 @@ class Admin::BrandsController < Admin::BaseController
       flash[:success] = t ".update_succeed"
       redirect_to admin_brands_path
     else
+      flash[:danger] = t ".update_failed"
       render :edit
     end
   end

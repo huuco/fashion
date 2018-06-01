@@ -15,7 +15,6 @@ title:
   maximum: 255
 price:
   numericality: 0
-products:
-  record_per_page: 8
+record_per_page: 8
 URL_IMAGE: "/upload/"
 rememeber_user: "1"

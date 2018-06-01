@@ -39,6 +39,27 @@ en:
     users:
       index:
         title: "List user"
+    products:
+      form:
+        name: "Name"
+        quantity: "Quantity"
+        short_description: "Short Description"
+        long_desctiption: "Long Description"
+        category: "Category"
+        brand: "Brand"
+        active: "Active"
+        you_sure: "You sure"
+      index:
+        search_an_product: "Search an product name"
+      destroy:
+        delete_success: "Delete success"
+        delete_error: "Delete error"
+      create:
+        save_success: "Save success"
+        save_failed: "Save failed"
+      update:
+        update_success: "update success"
+        update_failed: "update failed"
     addresses:
       index:
         title: "Addresses"
