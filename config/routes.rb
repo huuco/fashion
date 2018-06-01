@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get "/logout", to: "sessions#destroy"
   namespace :admin do
     get "/", to: "base#index"
-    resources :users
+    resources :users, except: :show
     resources :addresses
     resources :shippings
     resources :orders

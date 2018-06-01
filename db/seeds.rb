@@ -70,7 +70,6 @@ end
 
 30.times do |n|
   image = "sp"+n.to_s+".jpg"
-  product_id = n.to_s
   Image.create! image: image,
-    product_id: product_id
+    product_id: rand(1..20)
 end
