@@ -8,10 +8,12 @@
         </h1>
       </div>
       <div class="action_btn row col-lg-12">
-        <%= form_tag admin_brands_path, method: :get, id: "searchform" do %>
-          <%= text_field_tag :search, params[:search], id: "s",
-            placeholder: t("admin.brands.index.search_an_brand") , require: true %>
-          <%= button_tag type: :submit,id: "searchsubmit" do %>
+        <%= form_tag admin_brands_path, method: :get,
+          class: "navbar-form navbar-right" do %>
+          <%= text_field_tag :search, params[:search], class: "form-control",
+            placeholder: t("admin.brands.index.search_an_brand"),
+              "data-toggle": "dropdown", require: true %>
+          <%= button_tag type: :submit, class: "btn btn-default" do %>
             <i class ="fa fa-search"></i>
           <% end %>
         <% end %>
@@ -26,8 +28,7 @@
           <tr align="center">
             <th><%= t ".stt" %></th>
             <th><%= t ".name" %></th>
-            <th><%= t ".number" %></th>
-            <th><%= t ".description" %></th>
+            <th><%= t ".product_count" %></th>
             <th><%= t ".edit" %></th>
             <th><%= t ".delete" %></th>
           </tr>

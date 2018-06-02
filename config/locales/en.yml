@@ -52,6 +52,7 @@ en:
       index:
         brand: "Brands"
         search_an_brand: "Search an brand"
+        product_count: "Product count"
       form:
         you_sure: "You Sure?"
         title: "Brand"

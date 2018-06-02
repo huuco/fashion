@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   get "/shopping_cart", to: "cart#shopping_cart"
   get "search(/:search)", to: "search#index", as: :search
   get "search_brand(/:search)", to: "search1#index", as: :search_brand
+
   root "products#index"
   resources :products
   resources :account_activations, only: :edit
