@@ -18,3 +18,4 @@ price:
 record_per_page: 8
 URL_IMAGE: "/upload/"
 rememeber_user: "1"
+toastr_timeout: 350

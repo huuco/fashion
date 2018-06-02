@@ -1,5 +1,6 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+@import 'toastr';
 
 .logo {
   width: 100px;
@@ -21,8 +22,8 @@
 }
 
 .media .media-body {
-  float: left;
-  width: 200px;
+  display: inline-block;
+  width: auto;
 }
 
 .media .img_product {
@@ -64,5 +65,20 @@
     line-height: 47px;
     height: 47px;
     display: block;
+  }
+}
+
+.cart-body {
+  width: 300px;
+}
+
+.cart-prduct-image {
+  display: inline-block;
+  width: 40px;
+}
+
+.product-quantity {
+  input {
+    width: 50px;
   }
 }

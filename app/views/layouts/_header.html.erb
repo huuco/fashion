@@ -36,7 +36,8 @@
   <div class="header-body">
     <div class="container beta-relative">
       <div class="pull-left">
-        <%= link_to image_tag(Settings.URL_IMAGE+"logo.png",alt: "logo",class: "logo"), root_path %>
+        <%= link_to image_tag(Settings.URL_IMAGE+"logo.png",
+          alt: "logo",class: "logo"), root_path %>
       </div>
       <div class="pull-right beta-components space-left ov">
         <div class="space10">&nbsp;</div>
@@ -49,16 +50,9 @@
               <% end %>
             <% end %>
         </div>
-        <div class="beta-comp">
-          <div class="cart">
-            <div class="beta-select"><i class="fa fa-shopping-cart">
-              </i><%= link_to t("header.cart"), shopping_cart_path %>
-                <i class="fa fa-chevron-down"></i>
-              <div class="beta-dropdown cart-body">
-            </div>
-          </div>
-        </div>
+        <%= render "layouts/block_cart" %>
       </div>
       <div class="clearfix"></div>
     </div>
   </div>
+</div>

@@ -14,9 +14,13 @@
       </p>
     </div>
     <div class="single-item-caption">
-      <a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
-        <%= link_to t("products.details"), product_path(product), class: "beta-btn primary" %>
-        <i class="fa fa-chevron-right"></i>
+      <%= link_to add_to_cart_path(product),
+        remote: true, method: :post, class: "add-to-cart pull-left" do %>
+        <i class="fa fa-shopping-cart"></i>
+      <% end %>
+      <%= link_to t("products.details"), product_path(product),
+        class: "beta-btn primary" %>
+      <i class="fa fa-chevron-right"></i>
       <div class="clearfix"></div>
     </div>
   </div>
