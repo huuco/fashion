@@ -14,8 +14,6 @@ class User < ApplicationRecord
     format: {with: VALID_EMAIL_REGEX},
     length: {maximum: Settings.user.email.max_length},
     uniqueness: {case_sensitive: false}
-  validates :password, length: {minimum: Settings.user.password.min_length},
-    allow_nil: true
 
   enum role: %i(admin user)
 
@@ -27,7 +25,7 @@ class User < ApplicationRecord
   scope :search, (lambda do |search|
   select(:id, :full_name, :username, :email, :activated, :role).
     where "full_name LIKE :q OR username LIKE :q OR email LIKE :q",
-      q: "%#{search}%"
+    q: "%#{search}%"
   end
   )
 
