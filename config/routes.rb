@@ -33,4 +33,5 @@ Rails.application.routes.draw do
   post "/update_cart/:id", to: "carts#update", as: :update_cart
   post "/remove_cart/:id", to: "carts#destroy", as: :remove_cart
   resources :carts, only: :index
+  resources :addresses, except: :show
 end

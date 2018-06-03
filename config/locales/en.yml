@@ -1,6 +1,7 @@
 en:
   currency: "$"
   base_title: "FashionShop"
+  home: "Home"
   sessions:
     new:
       title_form: "Login"
@@ -312,7 +313,7 @@ en:
     register: "Register"
     create:
       confirm_email: "Please check email to active account"
-    my_account:
+    show:
       title: "My account"
       information: "Information"
       my_address: "My address"
@@ -353,3 +354,34 @@ en:
       order_total: "Order Total"
     update:
       update_success: "Updated success"
+  addresses:
+    title: "Address"
+    save_success: "Save success"
+    delete_success: "Delete success"
+    delete_error: "Delete error"
+    address_not_found: "Address not found"
+    add: "Add"
+    update: "Update"
+    index:
+      note: "Please create address"
+      add_new: "Add new address"
+    form:
+      alias: "Alias"
+      full_name: "Full name"
+      post_code: "Post code"
+      city: "City"
+      country: "Country"
+      phone: "Phone"
+      choose_user: "Choose user"
+      btn_save: "Save"
+      btn_reset: "Reset"
+    list:
+      alias: "Alias: "
+      full_name: "Full name: "
+      email: "Email: "
+      post_code: "Post code: "
+      address: "Address: "
+      phone: "Phone: "
+      update: "Update"
+      delete: "Delete"
+      you_sure: "You sure?"
