@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :categories, except: :show
     resources :products, except: :show
     resources :slides, except: :show
+    resources :payments, except: :show
   end
 
   get "/about", to: "static_pages#about"

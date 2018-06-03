@@ -2,6 +2,16 @@ en:
   currency: "$"
   base_title: "FashionShop"
   home: "Home"
+  update_succeed: "Update succeed"
+  update_failed: "Update failed"
+  create_succeed: "Create succeed"
+  create_failed: "Create failed"
+  delete_success: "Delete success"
+  delete_failed: "delete failed"
+  you_sure: "You Sure?"
+  not_found: "Not found with ID"
+  payment: "Payments"
+  user: "Users"
   sessions:
     new:
       title_form: "Login"
@@ -15,6 +25,14 @@ en:
     destroy:
       logout: "Logout success"
   admin:
+    user: "Users"
+    adress: "Adress"
+    product: "Products"
+    stt: "STT"
+    name: "Name"
+    description: "Description"
+    edit: "Edit"
+    delete: "Delete"
     slides:
       update:
         update_succeed: "Update succeed"
@@ -75,6 +93,7 @@ en:
         name: "Name"
         quantity: "Quantity"
         short_description: "Short Description"
+        description: "Description"
         long_desctiption: "Long Description"
         category: "Category"
         brand: "Brand"
@@ -223,6 +242,9 @@ en:
       update:
         updated_status_success: "Updated status success"
         updated_status_error: "Updated status error"
+    payments:
+      title: "Payment"
+      edit: "Edit"
   layouts:
     admin:
       sidebar:
