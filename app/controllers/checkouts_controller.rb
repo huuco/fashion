@@ -35,11 +35,11 @@ class CheckoutsController < ApplicationController
       total = @total + shipping.price
       @order.update_attributes transaction_id: transaction_id, total: total,
         status: Order.statuses["watting"]
-      @products_cart.each do |product, qty|
+      @products_cart.each do |product, quantity|
         OrderDetail.create product_id: product.id,
           order_id: @order.id,
-          quantity: qty,
-          total_price: product.promotion_price * qty
+          quantity: quantity,
+          total_price: product.price * quantity
       end
       session.delete :cart
       flash[:success] = t ".success"

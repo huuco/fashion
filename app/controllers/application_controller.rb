@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   def total_cart products
     @total = 0
     products.each do |product, quantity|
-      @total += product.promotion_price * quantity
+      @total += product.price * quantity
     end
     @total
   end

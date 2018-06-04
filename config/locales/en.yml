@@ -305,7 +305,7 @@ en:
     checkout: "Checkout"
     viewcart: "View cart"
   item_cart:
-    x: "%{qty} x "
+    x: "%{quantity} x "
   nav:
     menu: "Menu"
     home: "Home"
@@ -380,7 +380,7 @@ en:
       home: "Home"
       prduct: "Product"
       price: "Price"
-      qty: "Qty"
+      quantity: "Quantity"
       total: "Total"
       remove: "remove"
       image: "Image"

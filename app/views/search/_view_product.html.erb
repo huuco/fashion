@@ -7,8 +7,8 @@
     <div class="single-item-body">
       <p class="single-item-title"><%= product.name %></p>
       <p class="single-item-price">
-        <span class="flash-del">$ <%= product.price %></span>
-        <span class="flash-sale">$ <%= product.promotion_price %>
+        <span class="flash-del"><%= currency product.price %></span>
+        <span class="flash-sale"><%= currency product.price %>
         </span>
       </p>
     </div>
