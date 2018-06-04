@@ -15,6 +15,17 @@ en:
     destroy:
       logout: "Logout success"
   admin:
+    slides:
+      update:
+        update_succeed: "Update succeed"
+      load_category:
+        not_found_category: "Not found category"
+      destroy:
+        delete_success: "Delete success"
+      load_slide:
+        not_found_slide: "Not found slide"
+      create:
+        create_succeed: "Create succeed"
     categories:
       update:
         update_succeed: "Update succeed"

@@ -68,8 +68,14 @@ end
 end
 
 
-30.times do |n|
+29.times do |n|
   image = "sp"+n.to_s+".jpg"
   Image.create! image: image,
     product_id: rand(1..20)
+end
+
+20.times do |n|
+  Slide.create! title: "slie"+n.to_s,
+    image: "image/path"+n.to_s,
+    link: "link"
 end
