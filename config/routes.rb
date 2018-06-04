@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :shippings
     resources :orders
     resources :brands, except: :show
+    resources :categories, except: :show
     resources :products, except: :show
   end
 

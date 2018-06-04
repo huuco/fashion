@@ -15,6 +15,15 @@ en:
     destroy:
       logout: "Logout success"
   admin:
+    categories:
+      update:
+        update_succeed: "Update succeed"
+        update_failed: "Update failed"
+      load_category:
+        not_found_category: "Not found category"
+      destroy:
+        delete_success: "Delete success"
+        delete_failed: "Delete failed"
     brands:
       destroy:
         delete_success: "Delete success"
