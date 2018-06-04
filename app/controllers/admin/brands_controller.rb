@@ -1,9 +1,10 @@
 class Admin::BrandsController < Admin::BaseController
-  before_action :find_brand, only: %i(edit update destroy)
+  before_action :load_brand, only: %i(edit update destroy)
 
   def index
-    @brands = Brand.search_brand(params[:search]).page(params[:page])
-      .per Settings.limit_page
+    @brands = Brand.search_brand(params[:search])
+                   .page(params[:page])
+                   .per Settings.limit_page
   end
 
   def new
@@ -35,8 +36,7 @@ class Admin::BrandsController < Admin::BaseController
   end
 
   def destroy
-    if @brand.products.empty?
-      @brand.destroy
+    if @brand.products.empty? && @brand.destroy
       flash[:success] = t ".delete_succeed"
     else
       flash[:danger] = t ".can't_not"
@@ -50,7 +50,7 @@ class Admin::BrandsController < Admin::BaseController
     params.require(:brand).permit :name, :description
   end
 
-  def find_brand
+  def load_brand
     @brand = Brand.find_by id: params[:id]
     return if @brand
     flash[:danger] = t ".not_found_brand"

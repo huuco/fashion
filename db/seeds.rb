@@ -28,7 +28,8 @@ end
 end
 
 30.times do |n|
-  Brand.create name: Faker::Space.planet
+  Brand.create name: Faker::Space.planet,
+  description: Faker::Lorem.sentence
 end
 
 30.times do |n|
