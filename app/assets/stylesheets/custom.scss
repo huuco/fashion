@@ -90,3 +90,28 @@
 .address_content_item {
   display: inline-block;
 }
+
+.cart-items {
+  height: 200px;
+  overflow-y: scroll;
+}
+
+.address_content {
+  margin-top: 15px;
+}
+
+.new_order {
+  .your-order-body {
+    padding: 0 15px;
+  }
+}
+
+.box_address_shipping_payment {
+  border: 1px solid #e8e8e8;
+}
+
+.new_order {
+  .order_address {
+    padding-top: 15px;
+  }
+}
