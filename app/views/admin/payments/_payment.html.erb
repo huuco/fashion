@@ -1,0 +1,14 @@
+<tr class="odd gradeX center">
+  <td><%= index_for_list @payments, payment_counter %></td>
+  <td><%= payment.name %></td>
+  <td><%= payment.description.html_safe %></td>
+  <td class="center">
+    <i class="fa fa-pencil fa-fw"></i>
+    <%= link_to t("admin.edit"), edit_admin_payment_path(payment) %>
+  </td>
+  <td class="center">
+    <i class="fa fa-trash-o fa-fw"></i>
+    <%= link_to t("admin.delete"), admin_payment_path(payment),
+     method: :delete, data: {confirm: t("you_sure")}%>
+  </td>
+</tr>
