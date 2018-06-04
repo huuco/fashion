@@ -11,10 +11,12 @@ class SessionsController < ApplicationController
 
     if user && user.authenticate(params[:session][:password])
       if user.admin?
-        process_login user, admin_path
+        process_login user
+        redirect_to admin_path
       else
         if user.activated?
-          process_login user, root_url
+          process_login user
+          redirect_forwarding_url root_url
         else
           flash[:warning] = t ".error_active"
           redirect_to root_url
@@ -34,10 +36,9 @@ class SessionsController < ApplicationController
 
   private
 
-  def process_login user, url
+  def process_login user
     login user
     forget(user)
     remember(user) if params[:session][:remember_me] == Settings.rememeber_user
-    redirect_to url
   end
 end

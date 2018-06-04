@@ -17,7 +17,6 @@ Rails.application.routes.draw do
 
   get "/about", to: "static_pages#about"
   get "/contact", to: "static_pages#contact"
-  get "/checkout", to: "checkout#index"
   get "/signup", to:"users#new"
   post "/signup", to:"users#create"
   get "/my-account", to: "users#show"
@@ -36,5 +35,10 @@ Rails.application.routes.draw do
   post "/update_cart/:id", to: "carts#update", as: :update_cart
   post "/remove_cart/:id", to: "carts#destroy", as: :remove_cart
   resources :carts, only: :index
-  resources :addresses, except: :show
+  resources :addresses
+  resources :checkouts, only: %i(index create) do
+    collection do
+      get "/ajax_address", to: "checkouts#ajax_address"
+    end
+  end
 end

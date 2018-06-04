@@ -1,0 +1,113 @@
+<div class="inner-header">
+  <div class="container">
+    <div class="pull-left">
+      <h6 class="inner-title"><%= t ".title" %></h6>
+    </div>
+    <div class="pull-right">
+      <div class="beta-breadcrumb font-large">
+        <%= link_to t(".home"), root_path %> /
+        <span><%= t ".title" %></span>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</div>
+<div class="container">
+  <div id="content">
+    <%= form_for @order, url: checkouts_path do |f| %>
+      <%= render "layouts/error_messages", object: f.object %>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="box_address_shipping_payment">
+            <div class="your-order-head">
+                <h5><%= t ".address" %></h5>
+            </div>
+            <div class="order_address your-order-body">
+              <%= f.select(:address_id,
+              options_from_collection_for_select(@addresses, :id, :alias),
+              {}, {class: "form-control", url: ajax_address_checkouts_path}) %>
+              <div class="address_content">
+                <%= render partial: "checkouts/list_address" %>
+              </div>
+            </div>
+            <div class="your-order-head">
+                <h5><%= t ".shipping" %></h5>
+            </div>
+            <div class="your-order-body">
+              <ul class="payment_methods methods">
+                <% @shippings.each do |shipping| %>
+                  <li class="payment_method_bacs">
+                    <div>
+                      <%= f.radio_button :shipping_id, shipping.id,
+                        class: "select-shipping",
+                        shipping_cost: shipping.price %>
+                      <label><%= shipping.title %></label>
+                    </div>
+                    <div>
+                      <%= number_to_currency(shipping.price,
+                unit: t("currency"), separator: ",") %>
+                    </div>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+            <div class="your-order-head">
+                <h5><%= t "checkout.payments" %></h5>
+            </div>
+            <div class="your-order-body">
+              <ul class="payment_methods methods">
+                <% @payments.each do |payment| %>
+                  <li class="payment_method_bacs ">
+                    <%= f.radio_button :payment_id, payment.id %>
+                    <label><%= payment.name %></label>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="your-order">
+            <div class="your-order-head">
+              <h5><%= t ".your_order" %></h5>
+            </div>
+            <div class="your-order-body">
+              <div class="your-order-item">
+                <% @products_cart.each do |product, qty| %>
+                  <div class="media">
+                    <%= link_to image_tag(Settings.URL_IMAGE +
+                      product.images.first.image, class: "img_product") %>
+                    <div class="media-body">
+                      <p class="font-large"><%= product.name %></p>
+                      <p class="font-large">
+                        <%= number_to_currency(product.promotion_price,
+                          unit: t("currency"), separator: ",") %>
+                      </p>
+                    </div>
+                  </div>
+                <% end %>
+                <div class="clearfix"></div>
+              </div>
+              <div class="your-order-item">
+                <div class="pull-left"><p class="your-order-f18">
+                  <%= t ".total" %></p>
+                </div>
+                <div class="pull-right">
+                  <h5 class="color-black ordder-total" total="<%= @total %>">
+                    <%= number_to_currency(@total,
+                      unit: t("currency"), separator: ",") %>
+                  </h5>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+            <div class="text-center">
+              <%= f.button t(".order_confirm"), type: :submit,
+                class: "btn btn-default btn-primary" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

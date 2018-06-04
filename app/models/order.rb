@@ -12,6 +12,9 @@ class Order < ApplicationRecord
 
   enum status: %i(error completed watting)
 
+  validates :shipping, presence: true
+  validates :payment, presence: true
+
   ORDER_PARAMS = %i(transaction_id user_id total status shipping_id
-    payment_id address_id)
+    payment_id address_id).freeze
 end

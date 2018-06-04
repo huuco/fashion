@@ -11,9 +11,10 @@ class AddressesController < ApplicationController
 
   def create
     @address = current_user.addresses.build address_params
+
     if @address.save
       flash[:success] = t "addresses.save_success"
-      redirect_to addresses_path
+      redirect_forwarding_url addresses_path
     else
       render :new
     end
