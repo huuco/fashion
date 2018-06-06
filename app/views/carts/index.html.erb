@@ -21,13 +21,13 @@
             <th class="product-name"><%= t ".image" %></th>
             <th class="product-name"><%= t ".product" %></th>
             <th class="product-price"><%= t ".price" %></th>
-            <th class="product-quantity"><%= t ".qty" %></th>
+            <th class="product-quantity"><%= t ".quantity" %></th>
             <th class="product-subtotal"><%= t ".total" %></th>
             <th class="product-remove"><%= t ".remove" %></th>
           </tr>
         </thead>
         <tbody>
-          <% @products_cart.each do |product, qty| %>
+          <% @products_cart.each do |product, quantity| %>
           <tr class="cart_item cart_item-<%= product.id %>">
             <td class="product-image">
                 <%= link_to image_tag(Settings.URL_IMAGE+
@@ -39,19 +39,17 @@
             </td>
             <td class="product-price">
               <span class="amount">
-                <%= number_to_currency(product.promotion_price,
-                  unit: t("currency"), separator: ",") %>
+                <%= currency product.price %>
               </span>
             </td>
             <td class="product-quantity">
-              <%= number_field_tag "", qty, min: 1, step: 1,
+              <%= number_field_tag "", quantity, min: 1, step: 1,
                 url_update: update_cart_path(product.id),
                 class: "item-quanity" %>
             </td>
             <td class="product-subtotal product-subtotal-<%= product.id %>">
               <span class="amount">
-                <%= number_to_currency(product.promotion_price * qty,
-                unit: t("currency"), separator: ",") %>
+                <%= currency product.price * quantity %>
               </span>
             </td>
             <td class="product-remove">
@@ -74,8 +72,7 @@
         <div class="cart-totals-row">
           <span><%= t "order_total" %></span>
           <span class="order_total">
-            <%= number_to_currency(@total,
-              unit: t("currency"), separator: ",") %>
+            <%= currency @total %>
           </span>
         </div>
       </div>

@@ -2,7 +2,7 @@
   <div class="cart">
     <div class="beta-select">
       <i class="fa fa-shopping-cart"></i>
-      <span class="qty-item-cart">
+      <span class="quantity-item-cart">
         <% if @count_product_cart %>
           <%= t "header.item", item: @count_product_cart %>
         <% else %>
@@ -15,8 +15,7 @@
         <div class="cart-caption">
           <div class="cart-total text-right"><%= t "header.total" %>
             <span class="cart-total-value">
-              <%= number_to_currency(@total, unit: t("currency"),
-                separator: ",") %>
+              <%= currency @total %>
             </span>
           </div>
           <div class="clearfix"></div>

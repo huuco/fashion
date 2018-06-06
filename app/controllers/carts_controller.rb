@@ -6,8 +6,8 @@ class CartsController < ApplicationController
   def update
     respond_to do |format|
       cart = session[:cart] ||= {}
-      @qty = params[:qty].to_i
-      cart[@product.id.to_s] = @qty if cart[@product.id.to_s]
+      @quantity  = params[:quantity].to_i
+      cart[@product.id.to_s] = @quantity  if cart[@product.id.to_s]
       session_cart
       format.json
     end
