@@ -1,10 +1,10 @@
 <div class="col-sm-3">
   <div class="single-item">
     <div class="single-item-header">
-    <% if product.images.present? %>
-      <%= link_to image_tag(Settings.URL_IMAGE+product.images.first.image),
-        product_path(product) %>
-    <% end %>
+    <% image = product.images.present? ?
+      product.images.first.image.url : "no_image.png" %>
+    <%= link_to image_tag(image),
+      product_path(product) %>
     </div>
     <div class="single-item-body">
       <p class="single-item-title"><%= product.name %></p>
