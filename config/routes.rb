@@ -28,7 +28,9 @@ Rails.application.routes.draw do
   get "search_brand(/:search)", to: "search1#index", as: :search_brand
 
   root "products#index"
-  resources :products
+  resources :products do
+    resources :rates, only: :create
+  end
   resources :account_activations, only: :edit
   post "/add_to_cart/:id", to: "carts#add", as: :add_to_cart
   post "/remove_product_from_cart/:id", to: "carts#destroy",

@@ -1,0 +1,13 @@
+<div class="rate_user">
+  <div class="rate_star">
+    <% Settings.max_rate_star.times do |i| %>
+      <div class="star <%= "star_on" if i < rate.star %>">
+        <i class="fa fa-star"></i>
+      </div>
+    <% end %>
+  </div>
+  <div class="rate_content">
+    <%= rate.user_full_name %>|
+    <%= rate.content %>
+  </div>
+</div>

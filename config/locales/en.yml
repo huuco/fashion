@@ -351,9 +351,24 @@ en:
     button: "Buttons"
     show:
       related_product: "Related product"
+      need_login: "You need login to review product"
     product_right_column:
       new_product: "New Product"
       best_seller: "Best seller"
+    review_form:
+      add_one_review: "Add one review"
+      rate: "rate: %{name}"
+      quantity: "Quantity"
+      "1": "1"
+      "2": "2"
+      "3": "3"
+      "4": "4"
+      "5": "5"
+      comment: "Comment"
+      submit: "Submit"
+  rates:
+    create:
+      comment_success: "Comment success, please wait admin approved."
   search:
     product_not_found: "Products not found"
     list_product: "List Products"

@@ -1,5 +1,8 @@
 limit_page: 10
 positive: 0
+min_rate_star: 1
+max_rate_star: 5
+max_rate_content: 500
 limit_discount: 100
 
 user:
