@@ -2,7 +2,7 @@ class Admin::ProductsController < Admin::BaseController
   before_action :load_product, only: %i(edit update destroy)
 
   def index
-    @products = Product.search_product_name(params[:search])
+    @products = Product.search(params[:search])
       .page(params[:page]).per Settings.limit_page
   end
 
@@ -14,10 +14,10 @@ class Admin::ProductsController < Admin::BaseController
     @product = Product.new product_params
 
     if @product.save
-      flash[:success] = t ".save_success"
+      flash[:success] = t ".create_success"
       redirect_to admin_products_path
     else
-      flash[:danger] = t ".save_failed"
+      flash[:danger] = t ".create_failed"
       render :new
     end
   end
@@ -26,7 +26,7 @@ class Admin::ProductsController < Admin::BaseController
 
   def update
     if @product.update_attributes product_params
-      flash[:success] = t ".update_succeed"
+      flash[:success] = t ".update_success"
       redirect_to admin_products_path
     else
       flash[:danger] = t ".update_failed"
@@ -38,7 +38,7 @@ class Admin::ProductsController < Admin::BaseController
     if @product.destroy
       flash[:success] = t ".delete_success"
     else
-      flash[:danger] = t ".delete_error"
+      flash[:danger] = t ".delete_failed"
     end
     redirect_to admin_products_path
   end
@@ -46,7 +46,7 @@ class Admin::ProductsController < Admin::BaseController
   private
 
   def product_params
-    params.require(:product).permit Product::PRODUCT_PARAMS
+    params.require(:product).permit Product::ATTR_PARAMS
   end
 
   def load_product

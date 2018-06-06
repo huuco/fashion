@@ -1,4 +1,7 @@
 limit_page: 10
+positive: 0
+limit_discount: 100
+
 user:
   email:
     max_length: 255
