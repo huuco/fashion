@@ -12,6 +12,8 @@ en:
   not_found: "Not found with ID"
   payment: "Payments"
   user: "Users"
+  stt: "Stt"
+  enter_again: "Enter again"
   sessions:
     new:
       title_form: "Login"
@@ -25,7 +27,6 @@ en:
     destroy:
       logout: "Logout success"
   admin:
-    user: "Users"
     adress: "Adress"
     product: "Products"
     stt: "STT"
@@ -34,6 +35,10 @@ en:
     edit: "Edit"
     delete: "Delete"
     slides:
+      index:
+        add_new: "Add new"
+      slide:
+        you_sure: "You are sure?"
       update:
         update_succeed: "Update succeed"
       load_category:
@@ -56,7 +61,7 @@ en:
     brands:
       destroy:
         delete_success: "Delete success"
-        can't_not: "Can't not brand"
+        can't_not: "brand have"
         update:
           update_success: "Update success"
         create:
@@ -68,6 +73,8 @@ en:
       new:
         add: "Add"
       index:
+        add_new: "Add new"
+        submit: "Submit"
         brand: "Brands"
         search_an_brand: "Search an brand"
         product_count: "Product count"
@@ -78,6 +85,8 @@ en:
         description: "Description"
     users:
       index:
+        add_new: "Add new"
+        submit: "Submit"
         title: "List user"
         search_an_user: "search an fullname, username, email"
       update:
@@ -89,6 +98,8 @@ en:
       create:
         create_succeed:  "create succeed"
         create_failed: "create failed"
+      user:
+        you_sure: "You are sure?"
     products:
       form:
         name: "Name"
@@ -100,11 +111,22 @@ en:
         brand: "Brand"
         active: "Active"
         you_sure: "You sure"
+        add_image: "Add image"
+        tag: "Tag"
+        ref: "Ref"
+        upload_image: "Upload image"
+        choose_category: "Choose category"
+        choose_brand: "Choose brand"
+        add_image: "Add image"
+        discount: "Discount"
+        price: "Price"
       index:
+        add_new: "Add new"
+        submit: "Submit"
         search_an_product: "Search an product name"
       destroy:
         delete_success: "Delete success"
-        delete_error: "Delete error"
+        delete_failed: "Delete error"
       create:
         save_success: "Save success"
         save_failed: "Save failed"
@@ -119,19 +141,20 @@ en:
         active: "Active"
         search_an_user: "Search an user"
       edit:
-        eidt: "Edit"
+        title: "Edit"
         you_sure: "you sure"
-      update:
-        update_succeed: "update succeed"
-        update_failed: "update failed"
-      destroy:
-        delete_succeed: "delete succeed"
-        delete_failed: "delete failed"
-      find_user:
+      new:
+        title: "Add"
+      product:
+        you_sure: "You are sure?"
+        submit: "Submit"
+      load_user:
         not_found_user: "Not found user"
       create:
         create_succeed: "create succeed"
         create_failed: "create failed"
+      image_fields:
+        remove: "Remove"
       product_right_column:
         best_seller: "Best seller"
         new_product: "New products"
@@ -246,6 +269,8 @@ en:
     payments:
       title: "Payment"
       edit: "Edit"
+      index:
+        add_new: "Add new"
   layouts:
     admin:
       sidebar:
