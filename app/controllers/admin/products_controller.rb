@@ -14,7 +14,7 @@ class Admin::ProductsController < Admin::BaseController
     @product = Product.new product_params
 
     if @product.save
-      flash[:success] = t ".create_success"
+      flash[:success] = t ".create_succeed"
       redirect_to admin_products_path
     else
       flash[:danger] = t ".create_failed"

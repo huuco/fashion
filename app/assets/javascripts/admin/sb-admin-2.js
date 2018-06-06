@@ -18,6 +18,7 @@ $(document).ready(function() {
       caculator_price();
     }
   }
+
   $('.active_product').click(function(){
     var active = $(this).val() == 'true' ? 0 : 1;
     var url = $(this).attr('url');
@@ -32,6 +33,7 @@ $(document).ready(function() {
       }
     });
   });
+
   $('.activated_user').click(function(){
     var activated = $(this).val() == 'true' ? 0 : 1;
     var url = $(this).attr('url');
@@ -43,6 +45,21 @@ $(document).ready(function() {
       },
       success: function (result){
         $('.activated_user_' + result.id).val(result.activated);
+      }
+    });
+  });
+
+  $('.active_category').click(function(){
+    var active = $(this).val() == 'true' ? 0 : 1;
+    var url = $(this).attr('url');
+    $.ajax({
+      url: url,
+      type: 'POST',
+      data: {
+        active: active
+      },
+      success: function(category_active){
+        $('.active_category_' + result.id).val(category_active.active);
       }
     });
   });

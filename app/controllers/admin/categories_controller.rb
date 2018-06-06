@@ -1,5 +1,5 @@
 class Admin::CategoriesController < Admin::BaseController
-  before_action :load_category, only: %i(edit update destroy)
+  before_action :load_category, only: %i(edit update destroy active)
 
   def index
     @categories = Category.order_name
@@ -37,12 +37,19 @@ class Admin::CategoriesController < Admin::BaseController
   end
 
   def destroy
-    if @category.products.empty? && @destroy
+    if @category.products.empty? && @category.destroy
       flash[:success] = t ".delete_succeed"
     else
-      flash[:danger] = t ".delete_failed"
+      flash[:danger] = t ".delete_failed_have_product"
     end
     redirect_to admin_categories_path
+  end
+
+  def active
+    @category.update_attributes active: params[:active]
+    respond_to do |format|
+      format.json
+    end
   end
 
   private

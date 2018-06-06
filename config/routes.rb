@@ -6,7 +6,6 @@ Rails.application.routes.draw do
     get "/", to: "base#index"
     resources :addresses
     resources :brands, except: :show
-    resources :categories, except: :show
     resources :products, except: :show do
       post :active, on: :member
     end
@@ -17,6 +16,9 @@ Rails.application.routes.draw do
     resources :slides, except: :show
     resources :users, except: :show do
       post :activated, on: :member
+    end
+    resources :categories, except: :show do
+      post :active, on: :member
     end
   end
 
