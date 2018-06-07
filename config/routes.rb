@@ -10,7 +10,9 @@ Rails.application.routes.draw do
     resources :orders
     resources :brands, except: :show
     resources :categories, except: :show
-    resources :products, except: :show
+    resources :products, except: :show do
+      post :active, on: :member
+    end
     resources :slides, except: :show
     resources :payments, except: :show
   end

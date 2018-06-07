@@ -1,5 +1,5 @@
 class Admin::ProductsController < Admin::BaseController
-  before_action :load_product, only: %i(edit update destroy)
+  before_action :load_product, only: %i(edit update destroy active)
 
   def index
     @products = Product.search(params[:search])
@@ -41,6 +41,13 @@ class Admin::ProductsController < Admin::BaseController
       flash[:danger] = t ".delete_failed"
     end
     redirect_to admin_products_path
+  end
+
+  def active
+    @product.update_attributes active: params[:active]
+    respond_to do |format|
+      format.json
+    end
   end
 
   private
