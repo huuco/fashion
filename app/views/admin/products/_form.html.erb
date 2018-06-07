@@ -11,11 +11,11 @@
   <div class="form-group">
     <div class="old_price">
       <%= f.label :old_price, t(".old_price") %>
-      <%= f.number_field :old_price, class: "form-control" %>
+      <%= f.number_field :old_price, class: "form-control", step: :any %>
     </div>
     <div class="price">
       <%= f.label :price, t(".price") %>
-      <%= f.number_field :price, class: "form-control" %>
+      <%= f.number_field :price, class: "form-control", step: :any %>
     </div>
   </div>
   <div class="form-group">

@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
 
   def show
     @related_product = Product.related_product(@product.id)
-    @new_product = Product.order_product_created_at
+    @new_product = Product.order_by_created_at
     best_selling_id_product = OrderDetail.best_selling
     @best_selling = OrderDetail.best_selling.map(&:product)
   end
