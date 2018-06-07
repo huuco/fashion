@@ -26,18 +26,18 @@ Shipping.create! title: "UPS",
   price: 20
 
 10.times do |n|
-  Brand.create name: Faker::Space.planet,
+  Brand.create! name: Faker::Space.planet,
   description: Faker::Lorem.sentence
 end
 
 10.times do |n|
-  Category.create name: Faker::Space.moon
+  Category.create! name: Faker::Space.moon
 end
 
 10.times do |n|
   Product.create name: Faker::LeagueOfLegends.champion,
     old_price: Faker::Number.decimal(3),
-    price: 0,
+    price: Faker::Number.decimal(3),
     discount: 5,
     quantity: Faker::Number.number(2),
     short_description: Faker::Lorem.sentence,
@@ -50,7 +50,7 @@ Payment.create! name: "COD", description: ""
 Payment.create! name: "paypal", description: ""
 
 10.times do |n|
-  Order.create transaction_id: SecureRandom.hex,
+  Order.create! transaction_id: SecureRandom.hex,
     user_id: rand(1..10),
     total: 100+n,
     status: rand(0..2),
@@ -60,7 +60,7 @@ Payment.create! name: "paypal", description: ""
 end
 
 10.times do |n|
-  OrderDetail.create product_id: rand(1..10),
+  OrderDetail.create! product_id: rand(1..10),
     order_id: rand(1..10),
     quantity: rand(1..5),
     total_price: 1500
@@ -70,4 +70,12 @@ end
   Slide.create! title: "slider"+(n+1).to_s,
     image: "slider-"+(n+1).to_s,
     link: "link"
+end
+
+10.times do |n|
+  Comment.create product_id: n,
+    user_id: n,
+    content: Faker::Lorem.sentence,
+    author: Faker::LeagueOfLegends.champion,
+    email: Faker::Internet.free_email
 end

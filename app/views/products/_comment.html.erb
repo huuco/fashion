@@ -1,0 +1,6 @@
+<p class="text-muted"><%= t "products.add" %> <strong><%= comment.author %>
+  </strong> <%= t "rates.time" %>
+    <%= l(comment.created_at, format: :date_time) %></p>
+<blockquote>
+  <p><%= comment.content %></p>
+</blockquote>

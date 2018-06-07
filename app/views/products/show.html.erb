@@ -66,6 +66,19 @@
             <% else %>
               <%= t ".need_login" %>
             <% end %>
+            </div>
+          <h3><%= t ".comment" %></h3>
+          <div class="list-comments" id="show-comments">
+            <p><%= render partial: "comment", collection: @comments %></p>
+          </div>
+          <div id="paginator">
+            <%= paginate @comments, remote: true %>
+          </div>
+          <div id="create-comments">
+            <p><%= t ".comment" %></p>
+            <div class="form-submit-comment">
+              <%= render "form_comment" %>
+            </div>
           </div>
         </div>
         <div class="space50">&nbsp;</div>
