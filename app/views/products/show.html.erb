@@ -55,7 +55,11 @@
             <p><%= @product.long_description.html_safe %></p>
           </div>
           <div class="panel tab-reviews">
-            <p>No Reviews</p>
+            <% if logged_in? %>
+              <%= render "products/review_form" %>
+            <% else %>
+              <%= t ".need_login" %>
+            <% end %>
           </div>
         </div>
         <div class="space50">&nbsp;</div>
