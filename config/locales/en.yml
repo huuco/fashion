@@ -271,6 +271,26 @@ en:
       edit: "Edit"
       index:
         add_new: "Add new"
+    rates:
+      index:
+        title: "Rate"
+        content: "Content"
+        email: "Email"
+        product_name: "Product name"
+        star: "Star"
+        approve: "Approve"
+        delete: "Delete"
+      list:
+        delete: "Delete"
+        approve: "Approve"
+        approved: "Approved"
+        you_sure: "You sure?"
+      update:
+        not_found: "Rate not found"
+        approved: "Approved"
+      destroy:
+        delete_success: "Delete success"
+        delete_error: "Delete error"
   layouts:
     admin:
       sidebar:
@@ -279,6 +299,9 @@ en:
         shipping: "Shipping"
         order: "Order"
         brand: "Brand"
+        rate: "Rate"
+        payment: "Payment"
+        slide: "Slide"
   views:
     pagination:
       first: "«"

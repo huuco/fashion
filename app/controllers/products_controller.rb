@@ -6,10 +6,10 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @related_product = Product.related_product(@product.id)
+    @related_product = Product.related_product @product.id
     @new_product = Product.order_by_created_at
-    @best_selling = OrderDetail.best_selling.map(&:product)
-    @rates = @product.rates
+    @best_selling = OrderDetail.best_selling.map &:product
+    @rates = Rate.get_rate_actived_by_product_id @product.id
   end
 
   private
