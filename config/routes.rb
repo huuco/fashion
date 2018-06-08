@@ -33,7 +33,9 @@ Rails.application.routes.draw do
   root "products#index"
   resources :products do
     resources :rates, only: :create
+    resources :wishlists, only: :create
   end
+  resources :wishlists, only: %i(index destroy)
   resources :account_activations, only: :edit
   post "/add_to_cart/:id", to: "carts#add", as: :add_to_cart
   post "/remove_product_from_cart/:id", to: "carts#destroy",
