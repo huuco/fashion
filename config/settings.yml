@@ -2,6 +2,7 @@ limit_page: 10
 positive: 0
 min_rate_star: 1
 max_rate_star: 5
+rate_active: 1
 max_rate_content: 500
 limit_discount: 100
 
@@ -28,3 +29,4 @@ toastr_timeout: 350
 limit_best_seller: 10
 products:
   record_per_page: 8
+

@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     end
     resources :slides, except: :show
     resources :payments, except: :show
+    resources :rates, only: %i(index update destroy)
   end
 
   get "/about", to: "static_pages#about"

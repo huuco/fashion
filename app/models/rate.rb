@@ -8,5 +8,9 @@ class Rate < ApplicationRecord
   validates :content, presence: true, length: {
     maximum: Settings.max_rate_content}
 
-  delegate :full_name, to: :user, prefix: true, allow_nil: true
+  delegate :full_name, :email, to: :user, prefix: true, allow_nil: true
+  delegate :name, to: :product, prefix: true, allow_nil: true
+  scope :get_rate_actived_by_product_id,
+    ->(product_id){(where active: Settings.rate_active, product_id: product_id)
+    .order("created_at DESC")}
 end

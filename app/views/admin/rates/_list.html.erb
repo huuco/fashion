@@ -1,0 +1,18 @@
+<tr>
+  <td><%= rate.user_email %></td>
+  <td><%= rate.product_name %></td>
+  <td><%= rate.content %></td>
+  <td><%= rate.star %></td>
+  <td class="approved_<%= rate.id %>">
+    <% if rate.active? %>
+      <%= t ".approved" %>
+    <% else %>
+      <%= link_to t(".approve"), admin_rate_path(rate), remote: true,
+        method: :patch %>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to t(".delete"), admin_rate_path(rate), method: :delete,
+      data: {confirm: t("you_sure")} %>
+  </td>
+</tr>
