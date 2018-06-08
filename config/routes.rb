@@ -31,9 +31,11 @@ Rails.application.routes.draw do
   get "search(/:search)", to: "search#index", as: :search
   get "search_brand(/:search)", to: "search1#index", as: :search_brand
   root "products#index"
-  resources :products do
+  resources :products, only: :show do
     resources :rates, only: :create
     resources :wishlists, only: :create
+    get "/new", to: "products#new_products", on: :collection
+    get :hot, on: :collection
   end
   resources :wishlists, only: %i(index destroy)
   resources :account_activations, only: :edit
@@ -55,4 +57,5 @@ Rails.application.routes.draw do
       get "/ajax_address", to: "checkouts#ajax_address"
     end
   end
+  resources :categories, only: %i(index show)
 end

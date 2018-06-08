@@ -1,16 +1,15 @@
 <div class="container">
   <div id="content" class="space-top-none">
     <div class="main-content">
-      <div class="space60">&nbsp;</div>
       <div class="row">
         <div class="col-sm-12">
           <div class="beta-products-list">
             <h4><%= t "products.new_product" %></h4>
-            <div class="beta-products-details">
-              <div class="clearfix"></div>
-            </div>
             <div class="row">
               <%= render partial: "index", collection: @new_product, as: :product %>
+            </div>
+            <div class="col-sm-12">
+              <%= paginate @new_product %>
             </div>
           </div>
         </div>

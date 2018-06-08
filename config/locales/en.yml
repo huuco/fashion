@@ -375,10 +375,9 @@ en:
     logout: "Logout"
     menu: "Menu"
     home: "Home"
-    products: "Product"
-    item1: "Item1"
-    item2: "Item2"
-    item3: "Item3"
+    categoies: "Categories"
+    hot: "Hot"
+    new: "New"
     introduce: "Introduce"
     contact: "Contact"
   products:
@@ -390,6 +389,7 @@ en:
     relate_product: "Related Products"
     typo: "Typography"
     button: "Buttons"
+    no_product: "No product"
     show:
       related_product: "Related product"
       need_login: "You need login to review product"
@@ -400,13 +400,12 @@ en:
       add_one_review: "Add one review"
       rate: "rate: %{name}"
       quantity: "Quantity"
-      "1": "1"
-      "2": "2"
-      "3": "3"
-      "4": "4"
-      "5": "5"
       comment: "Comment"
       submit: "Submit"
+    new:
+      new_product: "New product"
+    hot:
+      hot_product: "Hot product"
   rates:
     create:
       comment_success: "Comment success, please wait admin approved."
@@ -511,3 +510,13 @@ en:
     destroy:
       not_found: "Product not found in wishlist"
       remove_success: "Removed success"
+  static_pages:
+    about:
+      title: "About"
+      about_page: "This is about page"
+    contact:
+      title: "Contact"
+  categories:
+    show:
+      not_found: "Category not found"
+      no_product: "No product"
