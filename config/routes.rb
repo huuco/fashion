@@ -59,4 +59,5 @@ Rails.application.routes.draw do
     end
   end
   resources :categories, only: %i(index show)
+  resources :brands, only: %i(index show)
 end
