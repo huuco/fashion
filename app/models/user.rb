@@ -26,7 +26,7 @@ class User < ApplicationRecord
   has_many :product_wishlists, through: :wishlists, source: :product
 
   scope :list_user, ->(current_user_id){where "id != ?", current_user_id}
-  scope :search, (lambda do |search|
+  scope :search_admin, (lambda do |search|
   select(:id, :full_name, :username, :email, :activated, :role).
     where "full_name LIKE :q OR username LIKE :q OR email LIKE :q",
     q: "%#{search}%"

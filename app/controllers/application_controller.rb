@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   include ApplicationHelper
   before_action :session_cart
   before_action :instagram
-
+  before_action :set_search
   def session_cart
     @cart = session[:cart] || {}
     @products_cart = @cart.map {|id, quantity| [Product.find_by(id: id),
@@ -29,5 +29,8 @@ class ApplicationController < ActionController::Base
     end
     @instagram_data = InstagramApi.user(ENV["INSTAGRAM_USER_ID"])
       .recent_media.data
+  end
+  def set_search
+    @search = Product.search(params[:q])
   end
 end
