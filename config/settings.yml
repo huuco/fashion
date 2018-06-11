@@ -1,11 +1,13 @@
 limit_page: 10
-positive: 0
-min_rate_star: 1
 max_rate_star: 5
+min_rate_star: 1
+positive: 0
 rate_active: 1
 max_rate_content: 500
-limit_discount: 100
-
+product:
+  conditional_max: 100
+  conditional_min: 0
+  limit_discount: 100
 user:
   email:
     max_length: 255
@@ -22,12 +24,12 @@ title:
   maximum: 255
 price:
   numericality: 0
-record_per_page: 8
-URL_IMAGE: "/upload/"
-rememeber_user: "1"
-toastr_timeout: 350
 limit_best_seller: 10
 max_length_email: 255
+record_per_page: 8
+rememeber_user: "1"
+toastr_timeout: 350
+URL_IMAGE: "/upload/"
 products:
   record_per_page: 8
 

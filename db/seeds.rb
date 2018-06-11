@@ -35,6 +35,7 @@ end
 end
 
 10.times do |n|
+  price_default = Faker::Number.decimal(3)
   Product.create name: Faker::LeagueOfLegends.champion,
     old_price: Faker::Number.decimal(3),
     price: Faker::Number.decimal(3),
@@ -67,7 +68,7 @@ end
 end
 
 2.times do |n|
-  Slide.create! title: "slider"+(n+1).to_s,
+  Slide.create title: "slider"+(n+1).to_s,
     image: "slider-"+(n+1).to_s,
     link: "link"
 end

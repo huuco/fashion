@@ -9,11 +9,14 @@ class Product < ApplicationRecord
   belongs_to :category
 
   validates :name, presence: true
-  validates :old_price, :price, :quantity, presence: true,
-    numericality: {greater_than: Settings.positive}
+  validates :old_price, presence: true,
+    numericality: {greater_than_or_equal_to: Settings.product.conditional_min}
   validates :discount, presence: true,
-    numericality: {greater_than: Settings.positive,
-    less_than: Settings.limit_discount}
+    inclusion: Settings.product.conditional_min..Settings.product.conditional_max
+  validates :price, presence: true,
+    numericality: {greater_than_or_equal_to: Settings.product.conditional_min}
+  validates :quantity, presence: true,
+    numericality: {greater_than_or_equal_to: Settings.product.conditional_min}
 
   delegate :name, to: :category, prefix: true, allow_nil: true
   delegate :name, to: :brand, prefix: true
@@ -24,7 +27,7 @@ class Product < ApplicationRecord
     :active, images_attributes: %i(id image image_cache _destroy)].freeze
 
   scope :order_by_name, ->{order name: :asc}
-  scope :search,(lambda do |search|
+  scope :search, (lambda do |search|
     where "name LIKE :q OR price LIKE :q OR quantity LIKE :q OR old_price LIKE :q",
       q: "%#{search}%"
   end
