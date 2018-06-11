@@ -8,6 +8,13 @@ class ProductsController < ApplicationController
   def show
     @related_product = Product.related_product @product.id
     @rates = Rate.get_rate_actived_by_product_id @product.id
+    @comments = @product.comments.show_review.page(params[:page]).
+      per Settings.record_per_page
+    respond_to do |format|
+      format.js
+      format.html
+    end
+    @comment = Comment.new
   end
 
   def new_products; end

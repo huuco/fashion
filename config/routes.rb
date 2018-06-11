@@ -36,6 +36,7 @@ Rails.application.routes.draw do
     resources :wishlists, only: :create
     get "/new", to: "products#new_products", on: :collection
     get :hot, on: :collection
+    resources :comments, only: :create
   end
   resources :wishlists, only: %i(index destroy)
   resources :account_activations, only: :edit

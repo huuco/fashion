@@ -1,0 +1,27 @@
+<%= form_for [@product, @comment], remote: true do |f| %>
+  <div class="error_comment"></div>
+  <div class="form-group">
+    <%= f.label :author, t(".author") %>
+    <% if logged_in? %>
+      <%= f.text_field :author, class: "form-control input-comment",
+        value: current_user.username %>
+    <% else %>
+      <%= f.text_field :author, class: "form-control input-comment" %>
+    <% end %>
+  </div>
+  <div class="form-group">
+    <%= f.label :email, t(".email") %>
+    <% if logged_in? %>
+      <%= f.text_field :email, class: "form-control input-comment",
+        value: current_user.email%>
+    <% else %>
+      <%= f.text_field :email, class: "form-control input-comment"%>
+    <% end %>
+  </div>
+  <div class="form-group">
+    <%= f.label :content, t(".content") %>
+    <%= f.text_area :content, class: "form-control input-comment", value: "" %>
+  </div>
+  <%= f.button t(".save"), type: :submit,
+    class: "btn btn-default submit-comment" %>
+<% end %>

@@ -15,6 +15,7 @@ gem "faker"
 gem "figaro"
 gem "font-awesome-rails", "~> 4.7", ">= 4.7.0.4"
 gem "i18n"
+gem "i18n-js"
 gem "jbuilder", "~> 2.5"
 gem "jquery-rails", "~> 4.3", ">= 4.3.1"
 gem "kaminari"
@@ -25,7 +26,6 @@ gem "sass-rails", "~> 5.0"
 gem "toastr-rails"
 gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
-gem "i18n-js"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

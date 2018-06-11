@@ -27,6 +27,7 @@ URL_IMAGE: "/upload/"
 rememeber_user: "1"
 toastr_timeout: 350
 limit_best_seller: 10
+max_length_email: 255
 products:
   record_per_page: 8
 
