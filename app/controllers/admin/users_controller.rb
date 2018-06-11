@@ -1,12 +1,12 @@
 class Admin::UsersController < Admin::BaseController
-  before_action :find_user, except: %i(index create new)
+  before_action :load_user, except: %i(index create new)
   before_action :admin_user, only: :destroy
 
   def index
     @users = User.list_user(current_user.id)
-      .search(params[:search])
-      .page(params[:page])
-      .per Settings.limit_page
+                 .search(params[:search])
+                 .page(params[:page])
+                 .per Settings.limit_page
   end
 
   def new
@@ -46,13 +46,20 @@ class Admin::UsersController < Admin::BaseController
     redirect_to admin_users_path
   end
 
+  def activated
+    @user.update_attributes activated: params[:activated]
+    respond_to do |format|
+      format.json
+    end
+  end
+
   private
 
   def user_params
     params.require(:user).permit User::ADMIN_PARAMS
   end
 
-  def find_user
+  def load_user
     @user = User.find_by id: params[:id]
     return if @user
     flash[:danger] = t ".not_found_user"

@@ -88,6 +88,12 @@ en:
         add_new: "Add new"
         submit: "Submit"
         title: "List user"
+        submit: "Submit"
+        full_name: "Full name"
+        activated: "Actived"
+        delete: "Delete"
+        name: "Name"
+        role: "Role"
         search_an_user: "search an fullname, username, email"
       update:
         update_succeed: "update succeed"
@@ -100,6 +106,14 @@ en:
         create_failed: "create failed"
       user:
         you_sure: "You are sure?"
+      form:
+        full_name: "Full name"
+        user_name: "USer name"
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+        role: "Role"
+        acitve: "active"
     products:
       form:
         name: "Name"
@@ -355,6 +369,9 @@ en:
   item_cart:
     x: "%{quantity} x "
   nav:
+    admin_fashion: "Admin Fashion"
+    setting: "Settings"
+    logout: "Logout"
     menu: "Menu"
     home: "Home"
     products: "Product"
