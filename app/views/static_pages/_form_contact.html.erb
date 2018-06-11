@@ -1,0 +1,20 @@
+<div class="col-sm-8">
+  <h2><%= t ".contact_form" %></h2>
+  <%= form_for :contact, url: "#" do |f| %>
+    <div class="form-block">
+      <%= f.text_field :name, placeholder: t(".your_name") %>
+    </div>
+    <div class="form-block">
+      <%= f.text_field :email, placeholder: t(".your_email") %>
+    </div>
+    <div class="form-block">
+      <%= f.text_field :subject, placeholder: t(".subject") %>
+    </div>
+    <div class="form-block">
+      <%= f.text_area :message, placeholder: t(".send_message") %>
+    </div>
+    <div class="form-block">
+      <%= f.button t(".send_message"), type: :submit, class: "btn btn-default" %>
+    </div>
+  <% end %>
+</div>

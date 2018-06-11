@@ -1,0 +1,25 @@
+<div class="inner-header">
+  <div class="container">
+    <div class="pull-left">
+      <h6 class="inner-title"><%= t ".new_product" %></h6>
+    </div>
+    <div class="pull-right">
+      <div class="beta-breadcrumb font-large">
+        <%= link_to t(".home"), root_path %> /
+        <span><%= t ".new_product" %></span>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</div>
+<div class="container">
+  <div id="content">
+    <div class="col-sm-12">
+      <%= render(partial: "products/index", collection: @new_product,
+        as: :product) || t("products.no_product") %>
+    </div>
+    <div class="col-sm-12">
+      <%= paginate @new_product %>
+    </div>
+  </div>
+</div>

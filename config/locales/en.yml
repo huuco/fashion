@@ -59,6 +59,9 @@ en:
       destroy:
         delete_success: "Delete success"
         delete_failed: "Delete failed"
+      index:
+        categories: "Categories"
+        no_category: "No category"
     brands:
       destroy:
         delete_success: "Delete success"
@@ -378,6 +381,7 @@ en:
     menu: "Menu"
     home: "Home"
     categoies: "Categories"
+    brands: "Brands"
     hot: "Hot"
     new: "New"
     introduce: "Introduce"
@@ -530,6 +534,13 @@ en:
       about_page: "This is about page"
     contact:
       title: "Contact"
+    form_contact:
+      contact_form: "Contact form"
+      your_name: "Your name*"
+      your_email: "Your email*"
+      subject: "Subject"
+      your_message: "Your message"
+      send_message: "Send message"
   categories:
     show:
       not_found: "Category not found"
@@ -537,3 +548,9 @@ en:
   time:
     formats:
       date_time: "%B, %d %Y %H:%M:%S"
+  brands:
+    load_brand:
+      not_found: "Brand not found"
+    index:
+      home: "Home"
+      brands: "Brands"
