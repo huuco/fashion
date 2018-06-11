@@ -64,3 +64,13 @@
   display: inline-block;
   width: 49%;
 }
+
+.pagination {
+  span {
+    border: 1px solid $silver;
+    display: inline-block;
+    height: 25px;
+    text-align: center;
+    width: 25px;
+  }
+}

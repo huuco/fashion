@@ -1,18 +1,30 @@
 class ProductsController < ApplicationController
-  before_action :load_product, only: %i(show)
+  before_action :load_product, only: :show
+  before_action :load_new_products, only: %i(index show new_products)
+  before_action :load_hot_products, only: %i(show hot)
 
-  def index
-    @new_product = Product.order_by_created_at
-  end
+  def index; end
 
   def show
     @related_product = Product.related_product @product.id
-    @new_product = Product.order_by_created_at
-    @best_selling = OrderDetail.best_selling.map &:product
     @rates = Rate.get_rate_actived_by_product_id @product.id
   end
 
+  def new_products; end
+
+  def hot; end
+
   private
+
+  def load_new_products
+    @new_product = Product.order_by_created_at.page(params[:page])
+      .per Settings.record_per_page
+  end
+
+  def load_hot_products
+    @best_selling = Product.best_selling.page(params[:page])
+      .per Settings.record_per_page
+  end
 
   def load_product
     @product = Product.find_by id: params[:id]

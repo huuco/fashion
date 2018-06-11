@@ -30,9 +30,12 @@ class Product < ApplicationRecord
   end
   )
   scope :related_product, ->(category_id){where(category_id: category_id)}
-  scope :order_by_created_at,
-    ->{order("created_at DESC").limit(Settings.record_per_page)}
+  scope :order_by_created_at, ->{order("created_at DESC")}
   scope :search_by_name, ->search_product do
     where("products.name LIKE ?", "%#{search_product}%").order(name: :asc)
   end
+
+  scope :best_selling,
+    ->{select("products.*, SUM(order_details.quantity) as total_quantity")
+    .joins(:order_details).group("products.id").order("total_quantity DESC")}
 end
