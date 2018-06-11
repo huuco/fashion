@@ -366,6 +366,7 @@ en:
     total: "Total: "
     checkout: "Checkout"
     viewcart: "View cart"
+    wishlist: "Wishlist"
   item_cart:
     x: "%{quantity} x "
   nav:
@@ -499,3 +500,14 @@ en:
       update: "Update"
       delete: "Delete"
       you_sure: "You sure?"
+  wishlists:
+    create:
+      product_exist: "Producte exist in wishlist"
+      exist: "This product have exist"
+      added: "This product have added"
+    index:
+      title: "Wishlist"
+      home: "Home"
+    destroy:
+      not_found: "Product not found in wishlist"
+      remove_success: "Removed success"
