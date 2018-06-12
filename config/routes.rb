@@ -2,6 +2,9 @@ require "sidekiq/web"
 require "admin_constraint"
 Rails.application.routes.draw do
   get "/login", to: "sessions#new"
+  get "auth/:provider/callback", to: "sessions_google#create"
+  get "auth/failure", to: redirect("/")
+  post "/login", to: "sessions#create"
   get "/logout", to: "sessions#destroy"
   post "/login", to: "sessions#create"
   namespace :admin do
