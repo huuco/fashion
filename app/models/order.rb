@@ -32,6 +32,7 @@ class Order < ApplicationRecord
         [total_day[1],total_day[0]]
       end
     end
+  end
 
   def send_order_info
     OrdersWorker.perform_in Settings.delay_time.seconds, id
