@@ -2,6 +2,9 @@ require "sidekiq/web"
 require "admin_constraint"
 Rails.application.routes.draw do
   get "/login", to: "sessions#new"
+  get "auth/:provider/callback", to: "sessions_google#create"
+  get "auth/failure", to: redirect("/")
+  post "/login", to: "sessions#create"
   get "/logout", to: "sessions#destroy"
   post "/login", to: "sessions#create"
   namespace :admin do
@@ -33,7 +36,7 @@ Rails.application.routes.draw do
   get "/my-account", to: "users#show"
   get "/shopping_cart", to: "cart#shopping_cart"
   get "/signup", to:"users#new"
-  get "/user/:id/edit", to: "users#edit", as: :update_account
+  get "/users/:id/edit", to: "users#edit", as: :update_account
   get "search(/:search)", to: "search#index", as: :search
   get "search_brand(/:search)", to: "search1#index", as: :search_brand
   root "products#index"
@@ -46,14 +49,13 @@ Rails.application.routes.draw do
   end
   resources :wishlists, only: %i(index destroy)
   resources :account_activations, only: :edit
-  patch "/update-account/:id", to: "users#update"
+  patch "/update-account/:id", to: "users#update", as: :edit_account
   post "/add_to_cart/:id", to: "carts#add", as: :add_to_cart
   post "/remove_cart/:id", to: "carts#destroy", as: :remove_cart
   post "/remove_product_from_cart/:id", to: "carts#destroy",
     as: :remove_product_from_cart
   post "/signup", to:"users#create"
   post "/update_cart/:id", to: "carts#update", as: :update_cart
-  put "/update-account/:id", to: "users#update"
 
   resources :products
   resources :account_activations, only: :edit

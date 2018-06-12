@@ -1,6 +1,6 @@
 <div class="container">
   <div id="content">
-    <%= form_for @user, url: update_account_path,
+    <%= form_for @user, url: edit_account_path,
       html: {class: "beta-form-checkout"} do |f| %>
       <%= render "layouts/error_messages", object: f.object %>
       <div class="row">
