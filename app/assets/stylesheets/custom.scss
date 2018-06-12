@@ -186,6 +186,7 @@
     overflow: scroll;
   }
 }
+
 .btn-search {
   display: block;
   border: 1px solid $silver;
@@ -200,4 +201,8 @@
   padding: 10px;
   position: absolute;
   z-index: 1;
+}
+
+.order-total {
+  width: 300px;
 }

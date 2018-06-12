@@ -33,7 +33,7 @@ Rails.application.routes.draw do
   get "/my-account", to: "users#show"
   get "/shopping_cart", to: "cart#shopping_cart"
   get "/signup", to:"users#new"
-  get "/update-account/:id", to: "users#edit", as: :update_account
+  get "/user/:id/edit", to: "users#edit", as: :update_account
   get "search(/:search)", to: "search#index", as: :search
   get "search_brand(/:search)", to: "search1#index", as: :search_brand
   root "products#index"
@@ -66,6 +66,6 @@ Rails.application.routes.draw do
   end
   resources :categories, only: %i(index show)
   resources :brands, only: %i(index show)
-
   get "*path", to: redirect("/")
+  resources :orders_history, only: %i(index show)
 end

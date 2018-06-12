@@ -476,6 +476,7 @@ en:
     empty_search: "Enter some thing to find!!"
   users:
     sign_up: "Sign up"
+    edit_account: "Edit account"
     log_in: "Log in"
     email: "Email address*"
     full_name: "Full name*"
@@ -601,6 +602,18 @@ en:
     order_info:
       order_info: "Order info"
       address: "Address"
+  orders_history:
+    index:
+      title: "Orders history"
+      transaction_id: "Transaction id"
+      total: "Total"
+      status: "Status"
+      detail: "Detail"
+    load_order:
+      not_found: "Order not found"
+    show:
+      title: "Order Detail"
+      status: "Status: "
       email: "Email: "
       full_name: "Full name: "
       post_code: "Post code: "
@@ -616,3 +629,4 @@ en:
       shipping: "Shipping: "
       subtotal: "Subtotal: "
       new_order: "New order"
+      payment: "Payment: "
