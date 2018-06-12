@@ -5,6 +5,8 @@ class Order < ApplicationRecord
   belongs_to :payment
   belongs_to :user
 
+  after_commit :send_order_info, on: :create
+
   scope :order_by, ->{order "id DESC"}
   scope :chart_by_total_created_at,
     ->(user_id){eager_load(:user).where user_id: user_id}
@@ -30,5 +32,10 @@ class Order < ApplicationRecord
         [total_day[1],total_day[0]]
       end
     end
+  end
+
+  def send_order_info
+    OrdersWorker.perform_in Settings.delay_time.seconds, id
+    AdminOrdersWorker.perform_in Settings.delay_time.seconds, id
   end
 end
