@@ -24,6 +24,7 @@ en:
       password: "Password"
       logined: "You have logined before. Now, no need login"
       login-google: "Sign in with Google"
+      sigin-in: "Create new account"
     create:
       error_login: "Email or password is not correct"
       error_active: "Account is not actived"
@@ -47,8 +48,32 @@ en:
     slides:
       index:
         add_new: "Add new"
+        title: "Slide"
+        categories: "Categories"
+        no_category: "No category"
+        list: "List"
+      edit:
+        title: "slide"
+        edit: "Edit"
+      form:
+        title: "Title"
+        link: "Link"
+        image: "Image"
+        save : "Save"
+        reset: "Reset"
       slide:
         you_sure: "You are sure?"
+      update:
+        update_succeed: "Update succeed"
+      load_category:
+        not_found_category: "Not found category"
+      destroy:
+        delete_success: "Delete success"
+        delete_failed: "Delete failed"
+      load_slide:
+        not_found_slide: "Not found slide"
+      create:
+        create_succeed: "Create succeed"
     categories:
       update:
         update_succeed: "update succeed"
@@ -73,21 +98,6 @@ en:
         title: "Category"
       category:
         you_sure: "You are sure?"
-    slides:
-      update:
-        update_succeed: "Update succeed"
-      load_category:
-        not_found_category: "Not found category"
-      destroy:
-        delete_success: "Delete success"
-        delete_failed: "Delete failed"
-      index:
-        categories: "Categories"
-        no_category: "No category"
-      load_slide:
-        not_found_slide: "Not found slide"
-      create:
-        create_succeed: "Create succeed"
     brands:
       destroy:
         delete_success: "Delete success"
@@ -191,6 +201,7 @@ en:
       edit:
         title: "Edit"
         you_sure: "you sure"
+        not_found_product: "product not found"
       new:
         title: "Add"
       product:
@@ -414,8 +425,9 @@ en:
     wishlist: "Wishlist"
     from_price: "From price"
     to_price: "To price"
-    name: "Name"
-
+    btn_search: "Search"
+    logout: "Logout"
+    name: "Product name"
   item_cart:
     x: "%{quantity} x "
   nav:
@@ -424,7 +436,7 @@ en:
     logout: "Logout"
     menu: "Menu"
     home: "Home"
-    categoies: "Categories"
+    categories: "Categories"
     brands: "Brands"
     hot: "Hot"
     new: "New"
@@ -444,6 +456,7 @@ en:
     typo: "Typography"
     button: "Buttons"
     no_product: "No product"
+    new_product: "New Product"
     show:
       related_product: "Related product"
       comment: "Comments"
@@ -639,3 +652,22 @@ en:
   sessions_google:
     create:
       info_email: "Please check email see infomation!"
+  order_mailer:
+    order_info:
+      order_info: "Order info"
+      address: "Address"
+      email: "Email: "
+      full_name: "Full name: "
+      post_code: "Post code: "
+      city: "City: "
+      country: "Country: "
+      phone: "Phone"
+      product_list: "Product list"
+      name: "Name"
+      price: "Price"
+      quantity: "Quantity"
+      total: "Total"
+      order_total: "Order total: "
+      shipping: "Shipping: "
+      subtotal: "Subtotal: "
+      new_order: "New order"

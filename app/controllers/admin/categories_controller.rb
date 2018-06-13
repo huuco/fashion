@@ -3,7 +3,7 @@ class Admin::CategoriesController < Admin::BaseController
 
   def index
     @categories = Category.order_name
-                          .search_admin_c(params[:search])
+                          .search_admin(params[:search])
                           .page(params[:page])
                           .per Settings.limit_page
   end
