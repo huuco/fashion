@@ -48,7 +48,7 @@
             <div class="form-group">
               <div class="name_contain">
                 <%= f.label :name_or_short_description_or_long_description_cont,
-                  t(".name") %>
+                  t("header.name") %>
                 <%= f.text_field :name_or_short_description_or_long_description_cont,
                   class: "form-control" %>
               </div>
@@ -61,7 +61,7 @@
                 <%= f.text_field :price_lteq, class: "form-control" %>
               </div>
             </div>
-            <%= f.submit t(".search"), class: "btn btn-default search-btn" %>
+            <%= f.submit t("header.btn_search"), class: "btn btn-default search-btn" %>
           <% end %>
         </div>
         <%= render "layouts/block_cart" %>

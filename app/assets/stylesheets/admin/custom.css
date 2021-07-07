@@ -73,3 +73,13 @@
 .btn-submit-chart .btn-submit {
   margin-top: 25px;
 }
+
+.thumb {
+  width: 100px;
+}
+
+.form-block {
+  .create-account {
+    margin-top: 11px;
+  }
+}

@@ -82,10 +82,12 @@
           </div>
         </div>
         <div class="space50">&nbsp;</div>
+      </div>
+      <%= render "products/product_right_column" %>
+      <div class="col-sm-12">
         <h6><%= t ".related_product" %></h6>
         <%= render partial: "index", collection: @related_product, as: :product %>
       </div>
-      <%= render "products/product_right_column" %>
     </div>
   </div>
 </div>

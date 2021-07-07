@@ -11,9 +11,10 @@
   <div class="form-group">
     <span class="picture">
       <%= f.label :image, t(".image") %>
-      <%= f.file_field :picture, accept: "image/jpeg,image/gif,image/png" %>
+      <%= f.file_field :image%>
+      <%= image_tag(@slide.image.url, class: "thumb") %>
     </span>
   </div>
-  <%= f.button t("admin.save"), type: :submit, class: "btn btn-default" %>
-  <%= f.button t("admin.reset"), type: :reset, class: "btn btn-default" %>
+  <%= f.button t(".save"), type: :submit, class: "btn btn-default" %>
+  <%= f.button t(".reset"), type: :reset, class: "btn btn-default" %>
 <% end %>

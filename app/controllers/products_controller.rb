@@ -3,7 +3,9 @@ class ProductsController < ApplicationController
   before_action :load_new_products, only: %i(index show new_products)
   before_action :load_hot_products, only: %i(show hot)
 
-  def index; end
+  def index
+    @slides = Slide.all
+  end
 
   def show
     @related_product = Product.related_product @product.id

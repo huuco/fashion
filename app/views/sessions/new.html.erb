@@ -17,6 +17,7 @@
               <%= f.check_box :remember_me, class: "remember_me" %>
               <span class="txt_rememeber_login"><%= t ".remember_login" %></span>
             <% end %>
+            <%= link_to t(".sigin-in"), signup_path, class: "create-account" %>
           </div>
           <div class="google-login">
             <%= link_to t(".login-google"), "/auth/google_oauth2"  %>
